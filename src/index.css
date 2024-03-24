@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  transition: 0.5s;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-img1 {
+  animation-name: heroAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.hero-img2 {
+  animation-name: heroAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes heroAnimation {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
