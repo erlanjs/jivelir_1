@@ -47,7 +47,7 @@ const ModalBuy = () => {
               {
                 chat_id: chatID,
                 photo: product?.image,
-                caption: `Название продукта: ${product?.name} \n Цена: ${product?.price} \n  количество: ${product.count}`,
+                caption: `Название продукта: ${product?.name} \n Цена: ${product?.price} \n  Количество: ${product.count}`,
               }
             );
             console.log(photoResponse);
@@ -74,7 +74,7 @@ const ModalBuy = () => {
           {
             chat_id: chatID,
             photo: basket?.[0]?.image,
-            caption: `Новый заказ \n-Название продукта: ${basket?.[0]?.name} \n-Цена: ${basket?.[0]?.price}cом \n-ИМЯ: ${newData.name} \n -НОМЕР ТЕЛЕФОНА: ${newData.phone} \n -EMAIL: ${newData.email}`,
+            caption: `Новый заказ \n-Название продукта: ${basket?.[0]?.name} \n-Цена: ${basket?.[0]?.price}cом  \nКоличество: ${basket[0].count} \n-ИМЯ: ${newData.name} \n -НОМЕР ТЕЛЕФОНА: ${newData.phone} \n -EMAIL: ${newData.email}`,
           }
         );
         console.log(response);
