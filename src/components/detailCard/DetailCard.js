@@ -23,7 +23,7 @@ export default function DetailCard() {
 
   function addToBasket() {
     const card = {
-      id: 1,
+      id: product.id,
       image: product.images[0].image,
       name: product.name,
       artikul: product.code,
