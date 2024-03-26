@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import { Link } from "react-router-dom";
+
 import img1 from "../../../assets/hero-bg-1.jpeg";
 import img2 from "../../../assets/hero-bg-2.jpeg";
 import banner1 from "../../../assets/banner1.png";
@@ -28,10 +28,16 @@ export default function Hero() {
         <h2 className="text-center text-2xl font-medium py-8 pt-[70px]">
           Коллекции украшений:
         </h2>
-        <img className="w-full" src={banner1} alt="" />
+        <Link to={"/category?collection=Sokolov"}>
+          <img className="w-full" src={banner1} alt="" />
+        </Link>
         <div className="flex mt-5 gap-5">
-          <img className="w-full" src={banner3} alt="" />
-          <img className="w-full" src={banner2} alt="" />
+          <Link to={"/category?collection=Romance"}>
+            <img className="w-full" src={banner3} alt="" />
+          </Link>
+          <Link to={"/category?collection=Hollywood"}>
+            <img className="w-full" src={banner2} alt="" />
+          </Link>
         </div>
       </div>
     </div>

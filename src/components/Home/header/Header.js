@@ -10,19 +10,20 @@ export default function Header() {
     <header className="fixed w-full py-2 z-10 bg-white ">
       <div className="container">
         <div className="flex justify-between items-center">
+          <Link to="/">
+            <img className="w-[130px]" src={logo} alt="" />
+          </Link>
           <Link to="/" className="text-[#56768B] font-bold text-xl ">
             Главная
           </Link>
-          <a href="" className="text-[#56768B] font-bold text-xl ">
+          <a href="/category" className="text-[#56768B] font-bold text-xl ">
             Каталог
           </a>
-          <a href="">
-            <img className="w-[130px]" src={logo} alt="" />
-          </a>
-          <a href="" className="text-[#56768B] font-bold text-xl ">
+
+          <Link to="/certificate" className="text-[#56768B] font-bold text-xl ">
             Сертификат
-          </a>
-          <a href="" className="text-[#56768B] font-bold text-xl ">
+          </Link>
+          <a href="/#contacts" className="text-[#56768B] font-bold text-xl ">
             Контакты
           </a>
           <Link className="relative" to="/basket">

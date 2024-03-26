@@ -2,19 +2,29 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { actionType } from "../../../redux/actionType";
 import { addToCart } from "./../../../redux/Reducer/ActionCreater";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Card({ card }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   function addBasket() {
     dispatch(addToCart(card));
   }
-  function open() {
-    dispatch({ type: actionType.OPEN_CLOSE_MODAL, payload: true });
+
+  function navigateToDetailPage() {
+    localStorage.setItem("product", JSON.stringify(card.data));
+
+    navigate(`/product/${card.id}`);
   }
 
   return (
-    <div className="min-w-[300px] flex flex-col p-3 border-2 border-red gap-2 ">
-      <img src={card.image} alt="product image" />
+    <div className=" min-w-[300px] max-w-[320px] flex flex-col justify-between p-3 border-2 gap-2 border-red  ">
+      <img
+        src={card.image}
+        className="cursor-pointer"
+        onClick={navigateToDetailPage}
+        alt="product image"
+      />
       <p className="text-[18px] text-gray-600 font-semibold">{card.name}</p>
       <span className="text-gray-500">
         Артикул: <span className="text-black font-bold">{card.artikul}</span>
@@ -27,12 +37,13 @@ export default function Card({ card }) {
       >
         В корзину
       </button>
+
       <button
-        onClick={open}
         id="clickMenu"
-        className="clickModal bg-white py-3 text-[#56768B] rounded-md"
+        onClick={navigateToDetailPage}
+        className="clickModal bg-white py-1 text-[#56768B] rounded-md"
       >
-        Купить в один клик
+        Подробное
       </button>
     </div>
   );
